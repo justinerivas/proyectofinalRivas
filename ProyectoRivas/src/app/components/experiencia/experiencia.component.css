@@ -1,0 +1,15 @@
+/*clase row le agrego margen a la izq*/
+.row{
+    padding: 20px;
+}
+
+/*etiqueta div como es etiqueta va sin punto*/
+div{
+    background: #a1b5cb;
+}
+
+/*inline hace que ocupe lo que está escrito. */
+/*es h1 y h3 porque en experiencia html, en la lista, puse h1 y h3*/
+h1,h3{
+    display: inline;
+}
