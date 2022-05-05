@@ -1,4 +1,43 @@
+.container{
+   display: flex;
+   justify-content: space-between;
+   align-items: center; 
+}
+
+.redes {
+    margin-right: 0.8em;
+   
+}
+
 #logoAP{
     width: 150px;
-    
+ }
+img {
+    width: 50px;
 }
+
+.btn{
+    border-width: 2.5px;
+}
+
+/*cuando @ media encuentra como máximo esta cantidad de pixeles, aplica la configuración/**/
+/*flex direction column hace que se mantenga uno debajo de otro en columna centrado*/
+
+@media (max-width:575px){
+
+.container{
+    flex-direction: column;
+}
+
+/*este seria div redes*/
+.redes{
+    display: flex;
+    flex-direction: column; /*queda uno debajo del otro*/
+    align-items: center; /*quedan centrados*/
+}
+
+.redes_img{
+    margin: 0.2em;
+}
+}
+
