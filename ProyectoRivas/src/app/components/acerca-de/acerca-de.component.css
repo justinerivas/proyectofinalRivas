@@ -6,8 +6,6 @@ div {
     background-color: #ffd778;
     text-align: center;
 }
-
-
 /*estilo de la foto de perfil*/
 /*qué hacer de 576px a pantallas más grandes media query*/
 /*min-width me mantiene la foto en el medio*/
@@ -16,27 +14,25 @@ div {
         position: absolute;
         width: 15%;
         border-radius: 35%;
-        box-shadow: 3px 3px 3px grey;
+        box-shadow: 3px 3px 3px #f59c49;
         left: 3%;
         top: 600px;
     }
 }
 /*qué hacer de 575px a pantallas más chicas media query*/
+/*Si lo cambio, recordar logo ap css*/
 @media (max-width: 575px){
     #fotodeperfil {
         position: absolute;
         width: 30%;
         border-radius: 35%;
-        box-shadow: 3px 3px 3px grey;
+        box-shadow: 3px 3px 3px #f59c49;
         left: 35%;
         top: 680px;
     }
 }
-
-
 /*etiqueta nombre*/
 #nombre{
     font-weight: bold;
-    margin-top: 15%;
-    
+    margin-top: 15%;    
 }

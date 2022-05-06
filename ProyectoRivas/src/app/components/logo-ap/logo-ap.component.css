@@ -1,18 +1,15 @@
 .container{
    display: flex;
-   justify-content: space-between;
-   align-items: center; 
+   justify-content: space-between; /*pone el div de logo y el de redes uno en una punta y el otro en la otra*/
+   align-items: center; /*deberían quedar todos en la misma linea*/
 }
-
 .redes {
     margin-right: 0.8em;
-   
-}
-
+   }
 #logoAP{
     width: 150px;
  }
-img {
+img{
     width: 50px;
 }
 
@@ -23,21 +20,19 @@ img {
 /*cuando @ media encuentra como máximo esta cantidad de pixeles, aplica la configuración/**/
 /*flex direction column hace que se mantenga uno debajo de otro en columna centrado*/
 
-@media (max-width:575px){
+@media (max-width: 575px){
 
 .container{
     flex-direction: column;
 }
 
-/*este seria div redes*/
 .redes{
     display: flex;
-    flex-direction: column; /*queda uno debajo del otro*/
-    align-items: center; /*quedan centrados*/
+    flex-direction: column; 
+    align-items: center; 
 }
-
-.redes_img{
-    margin: 0.2em;
+.redes img{
+    margin: 0.3em;
 }
 }
 
