@@ -21,8 +21,7 @@ img{
 /*flex direction column hace que se mantenga uno debajo de otro en columna centrado*/
 
 @media (max-width: 575px){
-
-.container{
+    .container{
     flex-direction: column;
 }
 
@@ -36,3 +35,13 @@ img{
 }
 }
 
+/*otro query porque si no me saltan los iconos*/
+@media (max-width: 397px){
+    .container{
+    Flex-direction: column
+    }
+
+   .redes img{
+   Margin: 0.3em;
+}
+}
