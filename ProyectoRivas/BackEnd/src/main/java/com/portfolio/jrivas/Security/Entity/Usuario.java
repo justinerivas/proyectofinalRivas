@@ -14,6 +14,8 @@ import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 
 
+
+
 @Entity
 public class Usuario {
     @Id
@@ -29,7 +31,7 @@ public class Usuario {
     @NotNull
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id", inverseJoinColumns = @JoinColumn(name = rol_id)))
+    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private Set<Rol> roles = new HashSet<>();
     //acá arriba creo dos tablas, usuario rol y esta tabla tiene dos columnas, una usuario id y la ptra es rol id. El usuario X está relacionada con el rol X
     
