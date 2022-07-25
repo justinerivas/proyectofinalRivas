@@ -20,10 +20,11 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true) //esta habilita la opción que los métodos que tenemos que estar logueados, estarían bloqueados
+@EnableGlobalMethodSecurity(prePostEnabled = true) //esta habilita la opción que los métodos que tienen que estar logueados, estarían bloqueados
 public class MainSecurity extends WebSecurityConfigurerAdapter{
     @Autowired
     UserDetailsImpl userDetailsServicesImpl;
@@ -34,8 +35,7 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
     public JwtTokenFilter jwtTokenFilter(){
         return new JwtTokenFilter();        
     }
-    
-    
+        
     @Bean
     public PasswordEncoder passwordEncoder(){
     return new BCryptPasswordEncoder();
@@ -51,7 +51,7 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
                 .exceptionHandling().authenticationEntryPoint(jwtEntryPoint)
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-                
+                http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 
     @Override
@@ -59,6 +59,8 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
         return super.authenticationManager();
     }
 
+    
+    @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean(); 
