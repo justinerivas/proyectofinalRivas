@@ -25,7 +25,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 //si toda la condición se cumple, sigue y si no dispara la excepción
 public class JwtTokenFilter extends OncePerRequestFilter {
 
-    private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
+    private final static Logger logger = LoggerFactory.getLogger(JwtTokenFilter.class);
 
     @Autowired
     JwtProvider jwtProvider;
