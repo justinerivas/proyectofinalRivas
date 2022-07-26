@@ -22,12 +22,12 @@ public class UsuarioService {
         return iusuarioRepository.findByNombreUsuario(nombreUsuario);
     }
     //chequea si el nombre de usuario existe
-    public boolean existByNombreUsuario(String nombreUsuario) {
-        return iusuarioRepository.existByNombreUsuario(nombreUsuario);
+    public boolean existsByNombreUsuario(String nombreUsuario) {
+        return iusuarioRepository.existsByNombreUsuario(nombreUsuario);
     }
     //chequea si el email existe
-    public boolean existByEmail(String email) {
-        return iusuarioRepository.existByEmail(email);
+    public boolean existsByEmail(String email) {
+        return iusuarioRepository.existsByEmail(email);
     }
     public void save(Usuario usuario){
         iusuarioRepository.save(usuario);
