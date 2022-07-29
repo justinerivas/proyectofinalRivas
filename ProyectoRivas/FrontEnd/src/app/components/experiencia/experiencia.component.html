@@ -1,21 +1,38 @@
+<!-- tabla que se vaya modificando a medida que agrego la experiencia -->
 <div class="row">
-   <h1>Experiencia Laboral</h1>
-   <div class="col-lg-1"></div>
+   <h1>Experiencia laboral</h1>
+
+   <div class="col-lg-2"> <!--botón para cargar experiencia-->
+       <button type="button" class="btn btn-success" routerLink="/nuevaexp" *ngIf="isLogged"> 
+         <!--si estoy logueada, muestra el botón-->
+         <!--https://getbootstrap.com/docs/4.0/components/buttons/-->
+         <i class="bi bi-lightbulb"></i>
+          Nueva Experiencia
+       </button>
+   </div>
+
+   <div class="col lg 1"></div> <!-- comienzo de la tabla. Ancho total 12-->
    <div class="col-lg-11">
-        <ul>
-           <li><h1>Trabajo1</h1> - 
-            <h3>(years)</h3></li>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error dignissimos voluptates enim eum tempora eius? Iure, harum et, accusamus voluptate consectetur nihil dicta, quae beatae cupiditate eligendi repellendus quaerat iste.</p>
-        </ul>
-        <ul>
-            <li><h1>Trabajo2</h1> - 
-             <h3>(years)</h3></li>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error dignissimos voluptates enim eum tempora eius? Iure, harum et, accusamus voluptate consectetur nihil dicta, quae beatae cupiditate eligendi repellendus quaerat iste.</p>
-         </ul>
-         <ul>
-            <li><h1>Trabajo3</h1> - 
-             <h3>(years)</h3></li>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error dignissimos voluptates enim eum tempora eius? Iure, harum et, accusamus voluptate consectetur nihil dicta, quae beatae cupiditate eligendi repellendus quaerat iste.</p>
-         </ul>
-    </div>
+
+       <table class="table"> <!-- clases sacadas de bootstrap -->
+           <tbody>
+               <tr *ngFor="let Experiencia of expe">  <!-- me recorre el array uno tras otro-->
+                   
+                  <td> <h5>{{Experiencia.nombreE}}</h5> </td> <!--nombre de la experiencia-->
+                   
+                  <td>{{Experiencia.descripcionE}}</td> <!--descripción de la experiencia-->
+                  
+                  <td *ngIf="isLogged">
+                       <button class="btn btn-light" routerLink="/editexp/{{Experiencia.id}}">
+                        <i class="bi bi-pencil-square"></i> Editar</button> <!--https://icons.getbootstrap.com/-->
+                   </td>
+                   <td *ngIf="isLogged">
+                       <button class="btn btn-danger" (click)="delete(Experiencia.id)"> <!--es solo click porque es borrar-->
+                           <i class="bi bi-trash-fill"></i> Borrar</button>
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+   </div>
+
 </div>
