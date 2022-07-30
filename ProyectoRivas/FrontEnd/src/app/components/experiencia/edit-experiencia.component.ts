@@ -20,7 +20,7 @@ export class EditExperienciaComponent implements OnInit {
       data =>{
         this.expLab = data;
       }, err =>{
-        alert("Error al editar experiencia");
+        alert("Error al modificar Experiencia");
         this.router.navigate(['']);
       }
     )
@@ -32,7 +32,7 @@ export class EditExperienciaComponent implements OnInit {
       data => {
         this.router.navigate(['']);
       }, err =>{
-         alert("Error al editar experiencia");
+         alert("Error al modificar Experiencia");
          this.router.navigate(['']);
       } //si hay error me lleva a la principal
     )

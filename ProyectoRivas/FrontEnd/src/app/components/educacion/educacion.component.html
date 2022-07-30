@@ -1,22 +1,37 @@
 <div class="row">
-    <h1>Educación</h1>
-    <div class="col-lg-1"></div>
-    <div class="col-lg-11">
-         <ul>
-            <li><h1>Educación1</h1> - 
-             <h3>(years)</h3></li>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error dignissimos voluptates enim eum tempora eius? Iure, harum et, accusamus voluptate consectetur nihil dicta, quae beatae cupiditate eligendi repellendus quaerat iste.</p>
-         </ul>
-         <ul>
-             <li><h1>Educación2</h1> - 
-              <h3>(years)</h3></li>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error dignissimos voluptates enim eum tempora eius? Iure, harum et, accusamus voluptate consectetur nihil dicta, quae beatae cupiditate eligendi repellendus quaerat iste.</p>
-          </ul>
-          <ul>
-             <li><h1>Educación3</h1> - 
-              <h3>(years)</h3></li>
-             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error dignissimos voluptates enim eum tempora eius? Iure, harum et, accusamus voluptate consectetur nihil dicta, quae beatae cupiditate eligendi repellendus quaerat iste.</p>
-          </ul>
-     </div>
- </div>
- 
+   <h1>Educación</h1>
+
+   <div class="col-lg-2"> <!--botón para cargar educación-->
+       <button type="button" class="btn btn-success" routerLink="/nuevaedu" *ngIf="isLogged"> 
+         <!--si estoy logueada, muestra el botón-->
+         <!--https://getbootstrap.com/docs/4.0/components/buttons/-->
+         <i class="bi bi-lightbulb"></i>
+          Nueva Educación
+       </button>
+   </div>
+
+   <div class="col lg 1"></div> <!-- comienzo de la tabla. Ancho total 12-->
+   <div class="col-lg-11">
+
+       <table class="table"> <!-- clases sacadas de bootstrap -->
+           <tbody>
+               <tr *ngFor="let Educacion of educacion">  <!-- me recorre el array uno tras otro-->
+                   
+                  <td> <h5>{{Educacion.nombreE}}</h5> </td> <!--nombre de la experiencia-->
+                   
+                  <td>{{Educacion.descripcionE}}</td> <!--descripción de la experiencia-->
+                  
+                  <td *ngIf="isLogged">
+                       <button class="btn btn-light" routerLink="/editedu/{{Educacion.id}}">
+                        <i class="bi bi-pencil-square"></i> Editar</button> <!--https://icons.getbootstrap.com/-->
+                   </td>
+                   <td *ngIf="isLogged">
+                       <button class="btn btn-danger" (click)="delete(Educacion.id)"> <!--es solo click porque es borrar-->
+                           <i class="bi bi-trash-fill"></i> Borrar</button>
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+   </div>
+
+</div>
