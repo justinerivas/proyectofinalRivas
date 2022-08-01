@@ -10,7 +10,7 @@ import { EducacionService } from 'src/app/service/educacion.service';
 })
 export class NewEducacionComponent implements OnInit {
   nombreE: string;
-  descripcionE: string;
+  descripcionE: string = '';
 
   constructor(private educacionS: EducacionService, private router: Router) { }
 
