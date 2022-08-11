@@ -23,11 +23,11 @@
                   <td>{{Experiencia.descripcionE}}</td> <!--descripción de la experiencia-->
                   
                   <td *ngIf="isLogged">
-                       <button class="btn btn-light" routerLink="/editexp/{{Experiencia.id}}">
+                       <button class="btn btn-light" routerLink="/editexp/{{Experiencia.id}}" style="float: right">
                         <i class="bi bi-pencil-square"></i> Editar</button> <!--https://icons.getbootstrap.com/-->
                    </td>
                    <td *ngIf="isLogged">
-                       <button class="btn btn-danger" (click)="delete(Experiencia.id)"> <!--es solo click porque es borrar-->
+                       <button class="btn btn-danger"  (click)="delete(Experiencia.id)" style="float: right;"> <!--es solo click porque es borrar-->
                            <i class="bi bi-trash-fill"></i> Borrar</button>
                    </td>
                </tr>

@@ -2,6 +2,7 @@
 .row{
     padding: 20px;
     background-color: #ffd778;
+    text-align: left;
 }
 
 /*el contenedor aca sería mi div principal*/
@@ -12,6 +13,7 @@
 .parte1, .parte2{
     display: inline-block;
     text-align: justify;
+    text-align: left;
 }
 
 /*ejex ejey difumación*/

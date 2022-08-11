@@ -6,7 +6,9 @@
 /*etiqueta div como es etiqueta va sin punto*/
 div{
     background: #ffd778;
-}
+    text-align: left;
+    }
+
 
 /*inline hace que ocupe lo que está escrito. */
 /*es h1 y h3 porque en experiencia html, en la lista, puse h1 y h3*/

@@ -13,7 +13,7 @@
    <div class="col lg 1"></div> <!-- comienzo de la tabla. Ancho total 12-->
    <div class="col-lg-11">
 
-       <table class="table"> <!-- clases sacadas de bootstrap -->
+       <table class="table" style="text-align:left"> <!-- clases sacadas de bootstrap -->
            <tbody>
                <tr *ngFor="let Educacion of educacion">  <!-- me recorre el array uno tras otro-->
                    
@@ -22,11 +22,11 @@
                   <td>{{Educacion.descripcionE}}</td> <!--descripción de la experiencia-->
                   
                   <td *ngIf="isLogged">
-                       <button class="btn btn-light" routerLink="/editedu/{{Educacion.id}}">
+                       <button class="btn btn-light" routerLink="/editedu/{{Educacion.id}}" style="float: right" >
                         <i class="bi bi-pencil-square"></i> Editar</button> <!--https://icons.getbootstrap.com/-->
                    </td>
                    <td *ngIf="isLogged">
-                       <button class="btn btn-danger" (click)="delete(Educacion.id)"> <!--es solo click porque es borrar individualmente-->
+                       <button class="btn btn-danger" (click)="delete(Educacion.id)" style="float: right"> <!--es solo click porque es borrar individualmente-->
                            <i class="bi bi-trash-fill"></i> Borrar</button>
                    </td>
                </tr>
