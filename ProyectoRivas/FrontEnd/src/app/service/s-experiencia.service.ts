@@ -7,7 +7,8 @@ import { Experiencia } from '../model/experiencia';
   providedIn: 'root'
 })
 export class SExperienciaService {
-  expURL = 'http://localhost:8080/explab/'; //sale del controller CExperiencia en la carpeta controller del apache
+  expURL = ' https://bkdjustine.herokuapp.com/explab/'; //sale del controller CExperiencia en la carpeta controller del apache
+  // cuando no trabajaba con el heroku, y solo de manera local, la dirección era http://localhost:8080/explab
 
   constructor(private httpClient: HttpClient) { }
 //método 1

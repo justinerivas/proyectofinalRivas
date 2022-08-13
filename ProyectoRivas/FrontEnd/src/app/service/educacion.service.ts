@@ -7,7 +7,9 @@ import { Educacion } from '../model/educacion';
   providedIn: 'root'
 })
 export class EducacionService {
-  URL = 'http://localhost:8080/educacion/'; //esto sale del GetMapping
+  URL = 'https://bkdjustine.herokuapp.com/educacion/'; 
+  //cuando no trabajaba con heroku y solo lo hacía de manera local la dirección era http://localhost:8080/educacion y salía del getmmapping
+
 
   constructor(private httpClient : HttpClient) { } //importo el HttpClient arriba
 

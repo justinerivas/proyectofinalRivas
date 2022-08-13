@@ -38,10 +38,10 @@ img{
 /*otro query porque si no me saltan los iconos*/
 @media (max-width: 397px){
     .container{
-    Flex-direction: column
+    flex-direction: column
     }
 
    .redes img{
-   Margin: 0.3em;
+   margin: 0.3em;
 }
 }

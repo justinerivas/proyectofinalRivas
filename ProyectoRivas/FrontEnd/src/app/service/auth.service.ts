@@ -9,7 +9,7 @@ import { NuevoUsuario } from '../model/nuevo-usuario';
   providedIn: 'root'
 })
 export class AuthService {
-  authURL = 'http://localhost:8080/auth/';
+  authURL = ' https://bkdjustine.herokuapp.com/auth/'; /* cuando estaba localmente era http://localhost:8080/auth/ */
   constructor(private httpClient:HttpClient) { }
 
   public nuevo(nuevoUsuario: NuevoUsuario): Observable<any>{
@@ -22,3 +22,4 @@ export class AuthService {
 }
 
 /*authURL = 'http://localhost:8080/auth/' es el endpoint del back*/
+/* Lo del renglón 24 era antes, cunado estaba trabajando sin heroku y de manera unicamente local */
