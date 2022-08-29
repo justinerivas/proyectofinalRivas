@@ -9,5 +9,4 @@ public class JrivasApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(JrivasApplication.class, args);
 	}
-
 }

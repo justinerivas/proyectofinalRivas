@@ -78,6 +78,7 @@ public class AuthController {
     //por defecto todos tendrían rol user, salvo que se le agregue admin y ahí sería, admin
 
     @PostMapping("/login")
+    @CrossOrigin(origins = "https://ftdjustine.web.app") 
     public ResponseEntity<JwtDto> login(@Valid @RequestBody LoginUsuario loginUsuario, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return new ResponseEntity(new Mensaje("Campos mal puestos"), HttpStatus.BAD_REQUEST);
