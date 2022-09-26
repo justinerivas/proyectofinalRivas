@@ -1,12 +1,19 @@
 <div class="row">
     <h1>Hard & Soft Skills</h1>
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="60"
-            [radius]="53"
+    
+    <div class="col-lg-2">
+        <button type="button" routerLink="/newskill" class="btn btn-success" *ngIf="isLogged">Nueva Skill</button>
+    </div>
 
-            [imageSrc]="'../../../assets/iconohtml.jpg'"
-            [showImage]="true"
+    
+    <div class="text-center col-sm-4 col-md-4 col-lg-4 circulo " *ngFor="let skill of skill">
+        <circle-progress
+            [percent]="(skill.porcentaje)"
+            [radius]="90" [imageSrc]="''" 
+            [title]="(skill.nombre)"
+            [titleColor]="'#810d70'"
+            [showTitle]="true" 
+            [showImage]="false"
             [imageHeight]="50"
             [imageWidth]="53"
             [showUnits]="false"
@@ -15,161 +22,22 @@
             [outerStrokeColor]="'#810d70'"
             [innerStrokeColor]="'#00acac'"
             [animation]="true"
-            [animationDuration]="450"
-        ></circle-progress>
+            [animationDuration]="450">        
+        </circle-progress>
+
+        <div>
+            <td *ngIf="isLogged">
+                <button class="btn btn-light" routerLink="/editskill/{{skill.id}}" style="float: right">
+                 <i class="bi bi-pencil-square"></i></button> <!--https://icons.getbootstrap.com/-->
+            </td>
+            <td *ngIf="isLogged">
+                <button class="btn btn-danger"  (click)="delete(skill.id)" style="float: right;"> <!--es solo click porque es borrar-->
+                    <i class="bi bi-trash-fill"></i></button>
+                </td>
+
+        </div>
+
+        
+        </div>
+        
     </div>
-     
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="60"
-            [radius]="53"
-
-            [imageSrc]="'../../../assets/iconojava.jpg'"
-            [showImage]="true"
-            [imageHeight]="50"
-            [imageWidth]="55"
-            [showUnits]="false"
-            [outerStrokeWidth]="5"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#810d70'"
-            [innerStrokeColor]="'#00acac'"
-            [animation]="true"
-            [animationDuration]="450"
-        ></circle-progress>
-    </div>
-  
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="60"
-            [radius]="53"
-
-            [imageSrc]="'../../../assets/iconocss.jpg'"
-            [showImage]="true"
-            [imageHeight]="50"
-            [imageWidth]="53"
-            [showUnits]="false"
-            [outerStrokeWidth]="5"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#810d70'"
-            [innerStrokeColor]="'#00acac'"
-            [animation]="true"
-            [animationDuration]="450"
-        ></circle-progress>
-    </div>
-
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="40"
-            [radius]="53"
-
-            [imageSrc]="'../../../assets/iconoapache.jpg'"
-            [showImage]="true"
-            [imageHeight]="55"
-            [imageWidth]="55"
-            [showUnits]="false"
-            [outerStrokeWidth]="5"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#810d70'"
-            [innerStrokeColor]="'#00acac'"
-            [animation]="true"
-            [animationDuration]="450"
-        ></circle-progress>
-    </div>
-
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="60"
-            [radius]="53"
-
-            [imageSrc]="'../../../assets/iconogithub.jpg'"
-            [showImage]="true"
-            [imageHeight]="50"
-            [imageWidth]="55"
-            [showUnits]="false"
-            [outerStrokeWidth]="5"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#810d70'"
-            [innerStrokeColor]="'#00acac'"
-            [animation]="true"
-            [animationDuration]="450"
-        ></circle-progress>
-    </div>
-
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="100"
-            [radius]="53"
-
-            [imageSrc]="'../../../assets/iconoequipo.jpg'"
-            [showImage]="true"
-            [imageHeight]="50"
-            [imageWidth]="55"
-            [showUnits]="false"
-            [outerStrokeWidth]="5"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#810d70'"
-            [innerStrokeColor]="'#00acac'"
-            [animation]="true"
-            [animationDuration]="450"
-        ></circle-progress>
-    </div>
-
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="100"
-            [radius]="53"
-
-            [imageSrc]="'../../../assets/iconoingles.png'"
-            [showImage]="true"
-            [imageHeight]="50"
-            [imageWidth]="55"
-            [showUnits]="false"
-            [outerStrokeWidth]="5"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#810d70'"
-            [innerStrokeColor]="'#00acac'"
-            [animation]="true"
-            [animationDuration]="450"
-        ></circle-progress>
-    </div>
-
-    <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="60"
-            [radius]="53"
-
-            [imageSrc]="'../../../assets/icononeerlandes.png'"
-            [showImage]="true"
-            [imageHeight]="55"
-            [imageWidth]="57"
-            [showUnits]="false"
-            [outerStrokeWidth]="5"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#810d70'"
-            [innerStrokeColor]="'#00acac'"
-            [animation]="true"
-            [animationDuration]="450"
-        ></circle-progress>
-    </div>
-
-        <div class="text-center col-sm-4 col-md-4 col-lg-4">
-        <circle-progress
-            [percent]="100"
-            [radius]="53"
-
-            [imageSrc]="'../../../assets/iconociencia.jpg'"
-            [showImage]="true"
-            [imageHeight]="50"
-            [imageWidth]="55"
-            [showUnits]="false"
-            [outerStrokeWidth]="5"
-            [innerStrokeWidth]="8"
-            [outerStrokeColor]="'#810d70'"
-            [innerStrokeColor]="'#00acac'"
-            [animation]="true"
-            [animationDuration]="450"
-        ></circle-progress>
-    </div>
-
-
-</div>

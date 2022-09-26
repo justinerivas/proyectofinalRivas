@@ -3,3 +3,10 @@
     padding: 20px;
     text-align: left;
 }
+
+.circulo{
+    display: flex;
+    flex-direction: colummn;
+    align-items:center;
+
+}
