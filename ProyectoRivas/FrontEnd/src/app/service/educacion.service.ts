@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Educacion } from '../model/educacion';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EducacionService {
-  URL = 'https://bkdjustine.herokuapp.com/educacion/'; 
+  URL = environment.URL + 'educacion/'; 
   //cuando no trabajaba con heroku y solo lo hacía de manera local la dirección era http://localhost:8080/educacion y salía del getmmapping
 
 
