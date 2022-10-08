@@ -9,11 +9,32 @@ import { persona } from '../model/persona.model';
 })
 
 export class PersonaService {
-  URL = environment.URL + 'personas/'; /*cuando trabajaba de manera local sin heroku era http://localhost:8080/personas/ */
+  URL = environment.URL + 'personas/'; /*va a enviroment y dependiendo con qué ambiente trabaje es uno o el otro */
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  public getPersona(): Observable<persona>{
-    return this.http.get<persona>(this.URL +'traer/perfil');
+  public lista(): Observable<persona[]>{ 
+    return this.httpClient.get<persona[]>(this.URL + 'lista');
   }
+
+  public detail(id: number): Observable<persona>{
+    return this.httpClient.get<persona>(this.URL + `detail/${id}`); //comillas diferentes porque por parámetro envío un id
+  }
+
+  /*
+  public save(persona: Persona): Observable<any>{ 
+    return this.httpClient.post<any>(this.URL + 'create', persona);
+  } 
+  */ //lo comento porque en el back no los uso. 
+
+  public update(id: number, Persona: persona): Observable<any>{
+    return this.httpClient.put<any>(this.URL + `update/${id}`, Persona); //comillas diferentes
+  }
+
+ /* 
+ public delete(id: number): Observable<any>{
+    return this.httpClient.delete<any>(this.URL + `delete/${id}`);
+  }
+  */ //lo comento porque en el back no los uso
+
 }
