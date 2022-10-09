@@ -13,8 +13,8 @@ export const environment = {
     messagingSenderId: '869396255930',
   },
   production: false,
-  URL: 'http://localhost:8080/'  /*ruta local para hacer las pruebas*/
-  //URL: 'https://bkdjustine.herokuapp.com/' /*ruta NO local para hacer las pruebas*/
+  //URL: 'http://localhost:8080/'  /*ruta local para hacer las pruebas*/
+  URL: 'https://bkdjustine.herokuapp.com/' /*ruta de producción*/
 
 };
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI*//
